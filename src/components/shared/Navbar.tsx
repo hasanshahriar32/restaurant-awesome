@@ -3,6 +3,8 @@ import Link from "next/link";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import ModeToggle from "@/components/ModeToggle";
 import Image from "next/image";
+import { WEBSITE_CONFIG } from "@/config";
+import { TrendyMenu } from "./NavItems/DataFetch";
 
 const Navbar = () => {
   return (
@@ -20,19 +22,24 @@ const Navbar = () => {
                 >
                   <Image
                     className="rounded-full"
-                    src="/icons/monkey-logo.webp"
+                    src={WEBSITE_CONFIG[0]?.logo}
                     width={40}
                     height={40}
-                    objectFit="contain"
+                    style={{
+                      objectFit: "contain", // cover, contain, none
+                    }}
                     alt="logo"
                   />
                   <h2 className="text-primary">
-                    Food
+                    {WEBSITE_CONFIG[0]?.firstName}
                     <span className="text-destructive font-extrabold">
-                      Monkey
+                      {WEBSITE_CONFIG[0]?.lastName}
                     </span>
                   </h2>
                 </Link>
+              </div>
+              <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
+                <TrendyMenu />
               </div>
               <ModeToggle />
             </div>

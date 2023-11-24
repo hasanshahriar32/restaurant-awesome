@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
+import { WEBSITE_CONFIG } from "@/config";
 
 const Hero = () => {
   return (
@@ -8,8 +9,10 @@ const Hero = () => {
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
           Discover Culinary Excellence at{" "}
           <span className="text-primary">
-            Food
-            <span className="text-destructive font-extrabold">Monkey</span>
+            {WEBSITE_CONFIG[0]?.firstName}
+            <span className="text-destructive font-extrabold">
+              {WEBSITE_CONFIG[0]?.lastName}
+            </span>
           </span>
         </h1>
         <p className="mt-5 text-xl max-w-prose text-muted-foreground">
