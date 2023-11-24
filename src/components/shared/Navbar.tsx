@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className="flex h-16 items-center">
               {/* TODO: mobile menu  */}
 
-              <div className="ml-4 mr-5 p-2 rounded-sm flex lg:ml-0 shadow-md dark:backdrop-brightness-200">
+              <div className="ml-4 mr-5 px-2 py-1 rounded-sm flex lg:ml-0 shadow-md dark:backdrop-brightness-200">
                 <Link
                   className="text-lg font-bold tracking-tight flex gap-2 items-center flex-row"
                   href="/"
