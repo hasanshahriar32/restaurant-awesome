@@ -8,8 +8,8 @@ const Hero = () => {
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
           Discover Culinary Excellence at{" "}
           <span className="text-primary">
-            Restaurant
-            <span className="text-destructive font-extrabold">X</span>
+            Food
+            <span className="text-destructive font-extrabold">Monkey</span>
           </span>
         </h1>
         <p className="mt-5 text-xl max-w-prose text-muted-foreground">

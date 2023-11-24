@@ -14,14 +14,24 @@ const Navbar = () => {
               {/* TODO: mobile menu  */}
 
               <div className="ml-4 mr-5 p-2 rounded-sm flex lg:ml-0 shadow-md dark:backdrop-brightness-200">
-                <Link href="/">
+                <Link
+                  className="text-lg font-bold tracking-tight flex gap-2 items-center flex-row"
+                  href="/"
+                >
                   <Image
-                    className=""
-                    src="/icons/restaurant.png"
-                    width={100}
-                    height={30}
+                    className="rounded-full"
+                    src="/icons/monkey-logo.webp"
+                    width={40}
+                    height={40}
+                    objectFit="contain"
                     alt="logo"
                   />
+                  <h2 className="text-primary">
+                    Food
+                    <span className="text-destructive font-extrabold">
+                      Monkey
+                    </span>
+                  </h2>
                 </Link>
               </div>
               <ModeToggle />
