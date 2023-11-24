@@ -7,6 +7,7 @@ import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Register({ className, ...props }: any) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -56,13 +57,39 @@ export default function Register({ className, ...props }: any) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button
+        onClick={() =>
+          signIn("github", {
+            callbackUrl: process.env.NEXTAUTH_URL,
+          })
+        }
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+      >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Icons.gitHub className="mr-2 h-4 w-4" />
         )}{" "}
         Github
+      </Button>
+      <Button
+        onClick={() =>
+          signIn("google", {
+            callbackUrl: process.env.NEXTAUTH_URL,
+          })
+        }
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        ) : (
+          <Icons.gitHub className="mr-2 h-4 w-4" />
+        )}{" "}
+        Google
       </Button>
     </div>
   );
