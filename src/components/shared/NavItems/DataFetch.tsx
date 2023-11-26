@@ -1,22 +1,15 @@
 import DesktopNav from "./NavItems.desktop";
 
 export const TrendyMenu = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/trendy`, {
+  const menuUrl = "http://localhost:5000/navMenu";
+  const res = await fetch(menuUrl, {
     next: {
       revalidate: 3600,
     },
   });
 
-  const data = await res.json();
+  const data = await res.json().catch((err) => {
+    console.log(err);
+  });
   return <DesktopNav data={data} />;
-};
-export const PopularMenu = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/popular`, {
-    next: {
-      revalidate: 3600,
-    },
-  });
-
-  const data = await res.json();
-  return data;
 };

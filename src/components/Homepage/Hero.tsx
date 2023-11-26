@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import { WEBSITE_CONFIG } from "@/config";
+import ModeToggle from "../ModeToggle";
 
 const Hero = () => {
   return (

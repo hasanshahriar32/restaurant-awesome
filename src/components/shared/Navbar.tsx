@@ -8,10 +8,10 @@ import { TrendyMenu } from "./NavItems/DataFetch";
 
 const Navbar = () => {
   return (
-    <div className="bg-secondary sticky z-50 top-0 inset-x-0 h-16">
-      <header className="relative bg-secondary border-b border-gray-200 dark:border-gray-700 ">
+    <div className=" sticky z-50 top-0 inset-x-0 h-16">
+      <header className="relative ">
         <MaxWidthWrapper>
-          <div className="">
+          <div className="backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 ">
             <div className="flex h-16 items-center">
               {/* TODO: mobile menu  */}
 

@@ -142,156 +142,167 @@
       "items": []
     }
   ],
-  "trendy": [
+
+  "navMenu": [
     {
       "id": 1,
-      "name": "Classic Cheeseburger",
-      "description": "A timeless favorite. Juicy beef patty, melted cheddar, crisp lettuce, and our special sauce on a toasted bun.",
-      "price": 8.99,
-      "rating": 4.5,
-      "reviews": [
-        { "id": 1, "user": "JohnDoe", "comment": "Delicious burger!" },
-        { "id": 2, "user": "Foodie123", "comment": "The best in town!" },
+      "category": "Trendy",
+      "items": [
+        {
+          "id": 1,
+          "name": "Classic Cheeseburger",
+          "description": "A timeless favorite. Juicy beef patty, melted cheddar, crisp lettuce, and our special sauce on a toasted bun.",
+          "price": 8.99,
+          "rating": 4.5,
+          "reviews": [
+            { "id": 1, "user": "JohnDoe", "comment": "Delicious burger!" },
+            { "id": 2, "user": "Foodie123", "comment": "The best in town!" },
+            {
+              "id": 3,
+              "user": "TasteExplorer",
+              "comment": "Great combination of flavors."
+            }
+          ],
+          "type": "Main Dish",
+          "image_url": "https://i.ibb.co/XZ9gH2v/31598568-food-banner-29.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Crispy Chicken Tenders",
+          "description": "Golden-fried chicken tenders served with your choice of dipping sauce. Perfect for a quick and satisfying bite.",
+          "price": 7.99,
+          "rating": 4.2,
+          "reviews": [
+            {
+              "id": 4,
+              "user": "ChickenLover",
+              "comment": "Crunchy and delicious!"
+            },
+            {
+              "id": 5,
+              "user": "SnackFanatic",
+              "comment": "Perfectly seasoned."
+            },
+            {
+              "id": 6,
+              "user": "FoodExplorer",
+              "comment": "Great for sharing with friends."
+            }
+          ],
+          "type": "Appetizer",
+          "image_url": "https://i.ibb.co/XZ9gH2v/31598568-food-banner-29.jpg"
+        },
         {
           "id": 3,
-          "user": "TasteExplorer",
-          "comment": "Great combination of flavors."
+          "name": "Grilled Shrimp Skewers",
+          "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
+          "price": 18.99,
+          "rating": 4.6,
+          "reviews": [
+            {
+              "id": 7,
+              "user": "SeafoodLover",
+              "comment": "Amazing flavors!"
+            },
+            {
+              "id": 8,
+              "user": "GourmetExplorer",
+              "comment": "Perfectly grilled."
+            },
+            {
+              "id": 9,
+              "user": "HealthyEater",
+              "comment": "Light and delicious."
+            }
+          ],
+          "type": "Main Dish",
+          "image_url": "https://i.ibb.co/XZ9gH2v/31598568-food-banner-29.jpg"
         }
-      ],
-      "type": "Main Dish",
-      "image_url": "/images/fast_food_cheeseburger.jpg"
+      ]
     },
     {
       "id": 2,
-      "name": "Crispy Chicken Tenders",
-      "description": "Golden-fried chicken tenders served with your choice of dipping sauce. Perfect for a quick and satisfying bite.",
-      "price": 7.99,
-      "rating": 4.2,
-      "reviews": [
+      "category": "Popular",
+      "items": [
         {
-          "id": 4,
-          "user": "ChickenLover",
-          "comment": "Crunchy and delicious!"
+          "id": 1,
+          "name": "Grilled Shrimp Skewers",
+          "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
+          "price": 18.99,
+          "rating": 4.6,
+          "reviews": [
+            {
+              "id": 7,
+              "user": "SeafoodLover",
+              "comment": "Amazing flavors!"
+            },
+            {
+              "id": 8,
+              "user": "GourmetExplorer",
+              "comment": "Perfectly grilled."
+            },
+            {
+              "id": 9,
+              "user": "HealthyEater",
+              "comment": "Light and delicious."
+            }
+          ],
+          "type": "Main Dish",
+          "image_url": "https://i.ibb.co/84QPTjY/21016095-Healthy-Seafood.jpg"
         },
         {
-          "id": 5,
-          "user": "SnackFanatic",
-          "comment": "Perfectly seasoned."
+          "id": 2,
+          "name": "Grilled Shrimp Skewers",
+          "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
+          "price": 18.99,
+          "rating": 4.6,
+          "reviews": [
+            {
+              "id": 7,
+              "user": "SeafoodLover",
+              "comment": "Amazing flavors!"
+            },
+            {
+              "id": 8,
+              "user": "GourmetExplorer",
+              "comment": "Perfectly grilled."
+            },
+            {
+              "id": 9,
+              "user": "HealthyEater",
+              "comment": "Light and delicious."
+            }
+          ],
+          "type": "Main Dish",
+          "image_url": "https://i.ibb.co/84QPTjY/21016095-Healthy-Seafood.jpg"
         },
         {
-          "id": 6,
-          "user": "FoodExplorer",
-          "comment": "Great for sharing with friends."
+          "id": 3,
+          "name": "Grilled Shrimp Skewers",
+          "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
+          "price": 18.99,
+          "rating": 4.6,
+          "reviews": [
+            {
+              "id": 7,
+              "user": "SeafoodLover",
+              "comment": "Amazing flavors!"
+            },
+            {
+              "id": 8,
+              "user": "GourmetExplorer",
+              "comment": "Perfectly grilled."
+            },
+            {
+              "id": 9,
+              "user": "HealthyEater",
+              "comment": "Light and delicious."
+            }
+          ],
+          "type": "Main Dish",
+          "image_url": "https://i.ibb.co/84QPTjY/21016095-Healthy-Seafood.jpg"
         }
-      ],
-      "type": "Appetizer",
-      "image_url": "/images/fast_food_chicken_tenders.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Grilled Shrimp Skewers",
-      "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
-      "price": 18.99,
-      "rating": 4.6,
-      "reviews": [
-        {
-          "id": 7,
-          "user": "SeafoodLover",
-          "comment": "Amazing flavors!"
-        },
-        {
-          "id": 8,
-          "user": "GourmetExplorer",
-          "comment": "Perfectly grilled."
-        },
-        {
-          "id": 9,
-          "user": "HealthyEater",
-          "comment": "Light and delicious."
-        }
-      ],
-      "type": "Main Dish",
-      "image_url": "/images/seafood_shrimp_skewers.jpg"
-    }
-  ],
-  "popular": [
-    {
-      "id": 1,
-      "name": "Grilled Shrimp Skewers",
-      "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
-      "price": 18.99,
-      "rating": 4.6,
-      "reviews": [
-        {
-          "id": 7,
-          "user": "SeafoodLover",
-          "comment": "Amazing flavors!"
-        },
-        {
-          "id": 8,
-          "user": "GourmetExplorer",
-          "comment": "Perfectly grilled."
-        },
-        {
-          "id": 9,
-          "user": "HealthyEater",
-          "comment": "Light and delicious."
-        }
-      ],
-      "type": "Main Dish",
-      "image_url": "/images/seafood_shrimp_skewers.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Grilled Shrimp Skewers",
-      "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
-      "price": 18.99,
-      "rating": 4.6,
-      "reviews": [
-        {
-          "id": 7,
-          "user": "SeafoodLover",
-          "comment": "Amazing flavors!"
-        },
-        {
-          "id": 8,
-          "user": "GourmetExplorer",
-          "comment": "Perfectly grilled."
-        },
-        {
-          "id": 9,
-          "user": "HealthyEater",
-          "comment": "Light and delicious."
-        }
-      ],
-      "type": "Main Dish",
-      "image_url": "/images/seafood_shrimp_skewers.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Grilled Shrimp Skewers",
-      "description": "Succulent shrimp skewers marinated in garlic and herbs, grilled to perfection. Served with a tangy lemon aioli.",
-      "price": 18.99,
-      "rating": 4.6,
-      "reviews": [
-        {
-          "id": 7,
-          "user": "SeafoodLover",
-          "comment": "Amazing flavors!"
-        },
-        {
-          "id": 8,
-          "user": "GourmetExplorer",
-          "comment": "Perfectly grilled."
-        },
-        {
-          "id": 9,
-          "user": "HealthyEater",
-          "comment": "Light and delicious."
-        }
-      ],
-      "type": "Main Dish",
-      "image_url": "/images/seafood_shrimp_skewers.jpg"
+      ]
     }
   ]
 }
