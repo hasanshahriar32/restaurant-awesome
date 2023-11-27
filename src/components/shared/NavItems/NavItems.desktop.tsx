@@ -4,7 +4,7 @@ import { useState } from "react";
 import MenuItem from "./MenuItem";
 
 const DesktopNav = ({ data }: any) => {
-  console.log(data);
+  // console.log(data);
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
   const isAnyOpen = activeIndex !== null;
   return (

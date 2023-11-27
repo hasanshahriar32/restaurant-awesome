@@ -8,10 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useSession, signIn, signOut } from "next-auth/react";
-
+import { useRouter } from "next/navigation";
 export default function Register({ className, ...props }: any) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
+  const router = useRouter();
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     setIsLoading(true);

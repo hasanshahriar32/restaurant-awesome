@@ -13,10 +13,10 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXT_SECRET,
+  // session: {
+  //   strategy: "jwt",
+  // },
+  // secret: process.env.NEXT_SECRET,
   pages: {
     signIn: "/register",
   },
