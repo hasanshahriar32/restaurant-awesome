@@ -7,10 +7,12 @@ import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-
+import { signIn } from "next-auth/react";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 export default function Register({ className, ...props }: any) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
+  const router = useRouter();
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     setIsLoading(true);
@@ -38,6 +40,20 @@ export default function Register({ className, ...props }: any) {
               disabled={isLoading}
             />
           </div>
+          <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="password">
+              password
+            </Label>
+            <Input
+              id="password"
+              placeholder="XXXXXXXXXXXXX"
+              type="password"
+              autoCapitalize="none"
+              autoComplete="password"
+              autoCorrect="off"
+              disabled={isLoading}
+            />
+          </div>
           <Button disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
@@ -56,7 +72,14 @@ export default function Register({ className, ...props }: any) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button
+        onClick={() => {
+          signIn("github", { callbackUrl: process.env.NEXTAUTH_URL || "/" });
+        }}
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+      >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
