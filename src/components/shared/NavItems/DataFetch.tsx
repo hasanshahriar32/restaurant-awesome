@@ -1,7 +1,12 @@
 import DesktopNav from "./NavItems.desktop";
+const dotenv = require("dotenv");
+const path = require("path");
+
+//location
+dotenv.config({ path: path.join(process.cwd(), ".env.local") });
 
 export const TrendyMenu = async () => {
-  const menuUrl = "http://localhost:5000/navMenu";
+  const menuUrl = `${process.env.BACKEND_URL || "https://r7j3ddww-5000.inc1.devtunnels.ms"}/navMenu`;
   const res = await fetch(menuUrl, {
     next: {
       revalidate: 3600,

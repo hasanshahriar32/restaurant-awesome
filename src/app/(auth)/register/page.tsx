@@ -1,15 +1,23 @@
 "use client";
 
 import * as React from "react";
-
+import { useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-
+import { signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 export default function Register({ className, ...props }: any) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const { data: session } = useSession();
+  // useLayoutEffect(() => {
+  //   if (session) {
+  //     redirect("/");
+  //   }
+  // }, [session]);
 
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
@@ -46,24 +54,7 @@ export default function Register({ className, ...props }: any) {
           </Button>
         </div>
       </form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
-      </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
-          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.gitHub className="mr-2 h-4 w-4" />
-        )}{" "}
-        Github
-      </Button>
+      
     </div>
   );
 }

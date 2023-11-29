@@ -5,6 +5,7 @@ import ModeToggle from "@/components/ModeToggle";
 import Image from "next/image";
 import { WEBSITE_CONFIG } from "@/config";
 import { TrendyMenu } from "./NavItems/DataFetch";
+import { ProfileMenu } from "./NavItems/ProfileMenu";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,8 @@ const Navbar = () => {
       <header className="relative ">
         <MaxWidthWrapper>
           <div className="backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 ">
-            <div className="flex h-16 items-center">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex  items-center">
               {/* TODO: mobile menu  */}
 
               <div className="ml-4 mr-5 px-2 py-1 rounded-sm flex lg:ml-0 shadow-md dark:backdrop-brightness-200">
@@ -41,7 +43,11 @@ const Navbar = () => {
               <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <TrendyMenu />
               </div>
-              <ModeToggle />
+            </div>
+              <div className="flex gap-2 justify-between">
+                <ModeToggle />
+              <ProfileMenu />
+              </div>
             </div>
           </div>
         </MaxWidthWrapper>

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-
+import ProviderLogin from "@/components/Auth/ProviderLogin";
+import { WEBSITE_CONFIG } from "@/config";
 export const metadata: Metadata = {
   title: "Authentication",
   description: "Authentication forms built using the components.",
@@ -13,61 +13,65 @@ export const metadata: Metadata = {
 export default function AuthenticationPage({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode | any;
 }) {
+  const CurrentPath: any = children?.props?.childPropSegment;
+  const RedirectPath = CurrentPath === "login" ? "register" : "login";
   return (
     <>
-      <div className="md:hidden">
+      <Link
+        className="text-lg ml-2 md:ml-4 mr-5 p-2 w-48 z-20 absolute  top-5 left-5 rounded-sm  lg:ml-0 shadow-md backdrop-brightness-200 font-bold tracking-tight flex gap-2 items-center flex-row"
+        href="/"
+      >
         <Image
-          src="/examples/authentication-light.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="block dark:hidden"
+          className="rounded-full"
+          src={WEBSITE_CONFIG[0]?.logo}
+          width={40}
+          height={40}
+          style={{
+            objectFit: "contain", // cover, contain, none
+          }}
+          alt="logo"
         />
-        <Image
-          src="/examples/authentication-dark.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="hidden dark:block"
-        />
-      </div>
-      <div className="container relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+        <h2 className="text-primary">
+          {WEBSITE_CONFIG[0]?.firstName}
+          <span className="text-destructive font-extrabold">
+            {WEBSITE_CONFIG[0]?.lastName}
+          </span>
+        </h2>
+      </Link>
+      <div className="container uppercase relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
-          href="/examples/authentication"
+          href={`/${RedirectPath}`}
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
-          Login
+          {RedirectPath}
         </Link>
+
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div className="absolute inset-0 bg-zinc-900" />
-          <div className="relative z-20 flex items-center text-lg font-medium">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2 h-6 w-6"
-            >
-              <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-            </svg>
-            Acme Inc
-          </div>
+
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                &ldquo;This library has saved me countless hours of work and
-                helped me deliver stunning designs to my clients faster than
-                ever before.&rdquo;
+                &ldquo;Welcome where passion meets the plate. Our culinary
+                journey is fueled by an unwavering commitment to crafting
+                exceptional dining experiences. Motivated by a love for food
+                that transcends the ordinary, we embark on a gastronomic
+                adventure that celebrates flavor, innovation, and authenticity.
+                Every dish is a labor of love, meticulously prepared to
+                tantalize your taste buds and elevate your dining moments. From
+                farm-fresh ingredients to culinary artistry, our motivation lies
+                in creating a symphony of tastes that resonate with your senses.
+                Join us on this flavorful odyssey, where each bite tells a story
+                of dedication, passion, and the joy of good food.&rdquo;
               </p>
-              <footer className="text-sm">Sofia Davis</footer>
+              <footer className="text-sm">
+                <Link href="https://shahriarhasan.vercel.app">Mr. Hasan</Link>
+              </footer>
             </blockquote>
           </div>
         </div>
@@ -82,6 +86,7 @@ export default function AuthenticationPage({
               </p>
             </div>
             {children}
+            <ProviderLogin />
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link

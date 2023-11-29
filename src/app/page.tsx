@@ -4,8 +4,10 @@ import Perks from "@/components/Homepage/Perks";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
+import {getServerSession} from "next-auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession();
   return (
     <>
       <Navbar />
