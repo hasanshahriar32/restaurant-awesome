@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function AuthenticationPage({
-  children,
+  children
 }: {
-  children: React.ReactNode | any;
+  children: React.ReactNode | any
 }) {
   const CurrentPath: any = children?.props?.childPropSegment;
   const RedirectPath = CurrentPath === "login" ? "register" : "login";

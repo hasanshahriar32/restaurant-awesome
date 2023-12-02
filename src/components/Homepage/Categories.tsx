@@ -1,7 +1,10 @@
 import Image from "next/image";
 
 const Categories = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/menu`, {
+  const url = "http://localhost:3000/menu"
+  console.log(url);
+  const res = await fetch(url, {
+    cache: 'force-cache',
     next: {
       revalidate: 3600,
     },
@@ -9,11 +12,12 @@ const Categories = async () => {
   // ssg:  for the static pages
   // isr: for the static page but you want to rebuild it periodically
   // ssr: for the dynamic pages
-  const data = await res.json();
+  const thisData = await res.json();
+  const data = await JSON.parse(thisData);
   //   console.log(data);
   return (
     <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
-      {data.map((item: any) => (
+      {data?.map((item: any) => (
         <div
           key={item.id}
           className="text-center mb-5 md:flex md:items-start md:text-left lg:block lg:text-center "

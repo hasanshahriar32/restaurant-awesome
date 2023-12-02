@@ -1,7 +1,13 @@
+"use client"
 import { Separator } from "@/components/ui/separator";
-import { AccountForm } from "./account-form"
-
+import { AccountForm } from "./account-form";
+import { Button } from "@/components/ui/button";
 export default function SettingsAccountPage() {
+  async function fetchData() {
+    const res = await fetch("/api/auth/user");
+    const data = await res.json();
+    console.log(data);
+  }
   return (
     <div className="space-y-6">
       <div>
@@ -13,6 +19,7 @@ export default function SettingsAccountPage() {
       </div>
       <Separator />
       <AccountForm />
+      <Button onClick={fetchData}>Fetch data to console</Button>
     </div>
-  )
+  );
 }

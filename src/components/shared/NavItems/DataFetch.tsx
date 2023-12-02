@@ -6,17 +6,17 @@ const path = require("path");
 dotenv.config({ path: path.join(process.cwd(), ".env.local") });
 
 export const TrendyMenu = async () => {
-  const menuUrl = `${
-    process.env.BACKEND_URL || "http://localhost:5000"
-  }/navMenu`;
+  const menuUrl = `http://localhost:5000/navmenu`;
+  console.log(menuUrl);
   const res = await fetch(menuUrl, {
+    cache: 'force-cache',
     next: {
       revalidate: 3600,
     },
   });
 
-  const data = await res.json().catch((err) => {
+  const thisData = await res.json().catch((err) => {
     console.log(err);
   });
-  return <DesktopNav data={data} />;
+  return <DesktopNav data={thisData} />;
 };

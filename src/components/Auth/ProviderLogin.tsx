@@ -3,7 +3,8 @@ import * as React from "react";
 import { Icons } from "@/components/ui/icons";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
-export default function ProviderLogin() {
+export default function ProviderLogin({ searchParams }: any) {
+  console.log(searchParams?.callbackUrl);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   return (
     <div className="uppercase">
@@ -20,7 +21,7 @@ export default function ProviderLogin() {
       <div className="w-full flex-col  justify-between items-center">
         <Button
           onClick={() => {
-            signIn("github", { callbackUrl: "/" });
+            signIn("github", { callbackUrl: searchParams?.callbackUrl || "/" });
           }}
           variant="outline"
           type="button"
@@ -36,7 +37,7 @@ export default function ProviderLogin() {
         </Button>
         <Button
           onClick={() => {
-            signIn("google", { callbackUrl: "/" });
+            signIn("google", { callbackUrl: searchParams?.callbackUrl || "/" });
           }}
           variant="outline"
           className="w-full "

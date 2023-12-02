@@ -8,7 +8,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import connect from "@/utils/db";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
-const authOptions: any = {
+export const authOptions: any = {
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -21,6 +21,7 @@ const authOptions: any = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
+        console.log(credentials);
         await connect();
         try {
           const user = await User.findOne({ email: credentials.email });

@@ -14,6 +14,7 @@ const AboutPage = () => {
       redirect("/register");
     }
   }, [session]);
+
   return (
     <div>
       <Navbar />

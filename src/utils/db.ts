@@ -12,6 +12,7 @@ const connect = async (): Promise<void> => {
     await mongoose.connect(process.env.MONGO_URL || "", mongooseOptions);
     console.log("Mongo Connection successfully established.");
   } catch (error) {
+    console.error("Error connecting to Mongoose:", error);
     throw new Error("Error connecting to Mongoose");
   }
 };

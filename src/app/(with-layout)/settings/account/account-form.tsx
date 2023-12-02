@@ -10,13 +10,13 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
 
-// import {
-//   Command,
-//   CommandEmpty,
-//   CommandGroup,
-//   CommandInput,
-//   CommandItem,
-// } from "@/components/ui/command";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
 import {
   Form,
   FormControl,
@@ -178,7 +178,7 @@ export function AccountForm() {
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                {/* <PopoverContent className="w-[200px] p-0">
+                <PopoverContent className="w-[200px] p-0">
                   <Command>
                     <CommandInput placeholder="Search language..." />
                     <CommandEmpty>No language found.</CommandEmpty>
@@ -204,7 +204,7 @@ export function AccountForm() {
                       ))}
                     </CommandGroup>
                   </Command>
-                </PopoverContent> */}
+                </PopoverContent>
               </Popover>
               <FormDescription>
                 This is the language that will be used in the dashboard.

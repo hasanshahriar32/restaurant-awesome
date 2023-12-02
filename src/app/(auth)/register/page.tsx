@@ -42,11 +42,11 @@ export default function Register({ className, ...props }: any) {
         console.error(data, "user already exists");
         setIsLoading(false);
       } else if (res.status === 201) {
-        // await signIn("credentials", {
-        //   redirect: false,
-        //   email,
-        //   password,
-        // });
+        await signIn("credentials", {
+          redirect: true,
+          email,
+          password,
+        });
         console.log(data);
         setIsLoading(false);
       } else {
