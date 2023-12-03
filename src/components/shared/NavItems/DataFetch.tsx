@@ -6,7 +6,7 @@ const path = require("path");
 dotenv.config({ path: path.join(process.cwd(), ".env.local") });
 
 export const TrendyMenu = async () => {
-  const menuUrl = `${process.env.BACKEND_URL || "https://r7j3ddww-5000.inc1.devtunnels.ms"}/navMenu`;
+  const menuUrl = `${process.env.BACKEND_URL || "http://localhost:5000"}/navMenu`;
   const res = await fetch(menuUrl, {
     next: {
       revalidate: 3600,

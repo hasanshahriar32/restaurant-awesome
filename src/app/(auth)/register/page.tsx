@@ -22,10 +22,36 @@ export default function Register({ className, ...props }: any) {
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     setIsLoading(true);
+    const form = event.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
 
-    setTimeout(() => {
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    console.log({ name, email, password });
+
+    try {
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        body: JSON.stringify({ name, email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res;
+      console.log(data);
+      if (res.status === 422) {
+        console.log("User already exists");
+        setIsLoading(false);
+      } else if (res.status === 200) {
+        // create a signin function
+
+        console.log(data);
+        setIsLoading(false);
+      }
+    } catch (error: any) {
+      console.log(error);
       setIsLoading(false);
-    }, 3000);
+    }
   }
 
   return (
@@ -33,15 +59,46 @@ export default function Register({ className, ...props }: any) {
       <form onSubmit={onSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="name">
+              Name
+            </Label>
+            <Input
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              type="text"
+              autoCapitalize="none"
+              autoComplete="name"
+              autoCorrect="off"
+              disabled={isLoading}
+            />
+          </div>
+          <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
               Email
             </Label>
             <Input
               id="email"
-              placeholder="name@example.com"
+              name="email"
+              placeholder="Your Email"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
+              autoCorrect="off"
+              disabled={isLoading}
+            />
+          </div>
+          <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="password">
+              password
+            </Label>
+            <Input
+              id="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              autoCapitalize="none"
+              autoComplete="password"
               autoCorrect="off"
               disabled={isLoading}
             />
@@ -54,7 +111,6 @@ export default function Register({ className, ...props }: any) {
           </Button>
         </div>
       </form>
-      
     </div>
   );
 }

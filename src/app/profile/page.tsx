@@ -11,7 +11,7 @@ const AboutPage = () => {
   const { data: session } = useSession();
   useLayoutEffect(() => {
     if (!session) {
-      redirect("/register");
+      redirect("/register?callbackUrl=http://localhost:3000");
     }
   }, [session]);
   return (
