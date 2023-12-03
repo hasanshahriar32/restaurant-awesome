@@ -6,7 +6,7 @@ const path = require("path");
 dotenv.config({ path: path.join(process.cwd(), ".env.local") });
 
 export const TrendyMenu = async () => {
-  const menuUrl = `https://r7j3ddww-5000.inc1.devtunnels.ms/navmenu`;
+  const menuUrl = `http://localhost:5000/navmenu`;
   console.log(menuUrl);
   const res = await fetch(menuUrl, {
     cache: "force-cache",
