@@ -44,7 +44,11 @@ export default function Register({ className, ...props }: any) {
         setIsLoading(false);
       } else if (res.status === 200) {
         // create a signin function
-
+        const data = await signIn("credentials", {
+          email,
+          password,
+          callbackUrl: "/",
+        });
         console.log(data);
         setIsLoading(false);
       }
